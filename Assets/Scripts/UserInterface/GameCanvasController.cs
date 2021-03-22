@@ -20,6 +20,11 @@ public class GameCanvasController : MonoBehaviour
     float TimerThreshold;
     float Timer = 0f;
 
+    private void Start()
+    {
+        PlayerCar = GameObject.FindGameObjectWithTag("PlayerCar");
+    }
+
     private void FixedUpdate()
     {
         UpdateTime();
@@ -75,7 +80,6 @@ public class GameCanvasController : MonoBehaviour
 
     public void RestartGame()
     {
-        //PlayerCar.GetComponent<Car>().isCarWorking = true;
         SceneManager.LoadScene("Game");
     }
 

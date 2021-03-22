@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         transform.rotation = rotOffset;
+        Target = GameObject.FindGameObjectWithTag("PlayerCar").transform;
     }
 
     // Update is called once per frame

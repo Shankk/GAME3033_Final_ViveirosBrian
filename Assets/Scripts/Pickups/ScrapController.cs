@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrapController : MonoBehaviour
 {
-    public float ScrapAmount = 50f;
+    public int ScrapAmount = 50;
 
     private void OnTriggerEnter(Collider other)
     {
