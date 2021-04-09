@@ -12,7 +12,7 @@ public class Wheel : MonoBehaviour
 
     public float Torque { get; set; }
 
-    private WheelCollider wheelCollider;
+    public WheelCollider wheelCollider { get; set; }
     private Transform wheelTransform;
 
     // Start is called before the first frame update

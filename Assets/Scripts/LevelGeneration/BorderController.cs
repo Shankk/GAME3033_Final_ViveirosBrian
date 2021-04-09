@@ -8,7 +8,7 @@ public class BorderController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        var Car = other.GetComponentInParent<Car>();
+        var Car = other.GetComponentInParent<Vehicle>();
         if(Car != null)
         bCollider.isTrigger = false;
     }

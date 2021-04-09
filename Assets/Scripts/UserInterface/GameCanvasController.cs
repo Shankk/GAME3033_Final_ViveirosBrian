@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class GameCanvasController : MonoBehaviour
 {
+    public GameObject[] CarList = new GameObject[3]; 
+    public GameObject PlayerCar;
     public Canvas pause;
     public Canvas gameOver;
-    public GameObject PlayerCar;
     public Transform StartOrigin;
 
     public TMPro.TextMeshProUGUI TimerUi;
@@ -22,6 +23,7 @@ public class GameCanvasController : MonoBehaviour
 
     private void Start()
     {
+        ChooseVehicle();
         PlayerCar = GameObject.FindGameObjectWithTag("PlayerCar");
     }
 
@@ -35,7 +37,7 @@ public class GameCanvasController : MonoBehaviour
     void UpdateTime()
     {
         TimerThreshold += Time.deltaTime;
-        PlayerCar.GetComponent<Car>().Fuel -= PlayerCar.GetComponent<Car>().FuelUsage * Time.deltaTime;
+        PlayerCar.GetComponent<Vehicle>().Fuel -= PlayerCar.GetComponent<Vehicle>().FuelUsage * Time.deltaTime;
         if(TimerThreshold > 1)
         {
             Timer += 1f;
@@ -53,16 +55,24 @@ public class GameCanvasController : MonoBehaviour
 
     void UpdatePlayerStats()
     {
-        HealthSlider.value = PlayerCar.GetComponent<Car>().Health / 100;
-        FuelSlider.value = PlayerCar.GetComponent<Car>().Fuel / 100;
-        ScrapUi.text = "Scrap: " + PlayerCar.GetComponent<Car>().Scrap;
-        if(PlayerCar.GetComponent<Car>().Fuel <= 0 || PlayerCar.GetComponent<Car>().Health <= 0)
+        HealthSlider.value = PlayerCar.GetComponent<Vehicle>().Health / 100;
+        FuelSlider.value = PlayerCar.GetComponent<Vehicle>().Fuel / 100;
+        ScrapUi.text = "Scrap: " + PlayerCar.GetComponent<Vehicle>().Scrap;
+
+        // Lose Condition
+        if(PlayerCar.GetComponent<Vehicle>().Fuel <= 0 || PlayerCar.GetComponent<Vehicle>().Health <= 0)
         {
             Time.timeScale = 0;
-            //PlayerCar.GetComponent<Car>().isCarWorking = false;
             gameOver.enabled = true;
+            SaveSystem.SavePlayerData(PlayerCar.GetComponent<Vehicle>(), true);
         }
         
+    }
+
+    public void ChooseVehicle()
+    {
+        PlayerData data = SaveSystem.LoadPlayerData();
+        CarList[data.SelectedVehicle].gameObject.SetActive(true);
     }
 
     public void PausedGame()
@@ -80,7 +90,15 @@ public class GameCanvasController : MonoBehaviour
 
     public void RestartGame()
     {
+        SaveSystem.SavePlayerData(PlayerCar.GetComponent<Vehicle>(), true);
         SceneManager.LoadScene("Game");
+    }
+
+    public void Garage()
+    {
+        SaveSystem.SavePlayerData(PlayerCar.GetComponent<Vehicle>(), true);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Garage");
     }
 
     public void MainMenu()

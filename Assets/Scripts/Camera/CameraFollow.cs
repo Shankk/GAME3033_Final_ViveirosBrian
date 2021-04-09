@@ -14,14 +14,16 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         transform.rotation = rotOffset;
-        Target = GameObject.FindGameObjectWithTag("PlayerCar").transform;
+        //Target = GameObject.FindGameObjectWithTag("PlayerCar").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Target == null)
-            return;
+        {
+            Target = GameObject.FindGameObjectWithTag("PlayerCar").transform;
+        }
 
         transform.position = Vector3.Lerp(transform.position, Target.position + offset, damper * Time.deltaTime);
         transform.LookAt(Target);

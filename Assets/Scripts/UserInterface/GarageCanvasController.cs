@@ -13,18 +13,17 @@ public class GarageCanvasController : MonoBehaviour
     public Canvas VehicleCanvas;
 
     public UpgradeSystem UpgradeSys;
-    public GameObject[] CarList;
-
+    public VehicleSystem VehicleSys;
+    
     public Vector3 GarageVector;
     public Vector3 VehicleVector;
     public Vector3 UpgradeVector;
     public float positionError;
     public float smooth;
-    public int CarCount;
-
+    
     private void Start()
     {
-        CarList[CarCount].GetComponent<Car>().LoadPlayer();
+        VehicleSys.CarList[VehicleSys.CarCount].GetComponent<Vehicle>().LoadPlayer();   
     }
 
     void SetNewScreen(Canvas Screen)
@@ -41,6 +40,7 @@ public class GarageCanvasController : MonoBehaviour
 
     public void StartNewRun()
     {
+        VehicleSys.CarList[VehicleSys.CarCount].GetComponent<Vehicle>().SavePlayer();
         SceneManager.LoadScene("Game");
     }
 
@@ -49,7 +49,7 @@ public class GarageCanvasController : MonoBehaviour
         SetNewScreen(UpgradeCanvas);
         StopAllCoroutines();
         StartCoroutine(SetCamera(UpgradeVector));
-        UpgradeCanvas.GetComponent<UpgradeSystem>().UpdateTextVisual();
+        UpgradeCanvas.GetComponent<UpgradeSystem>().OnEnter(VehicleSys.CarList[VehicleSys.CarCount].GetComponent<Vehicle>());
     }
 
     public void VehicleScreen()
@@ -57,6 +57,7 @@ public class GarageCanvasController : MonoBehaviour
         SetNewScreen(VehicleCanvas);
         StopAllCoroutines();
         StartCoroutine(SetCamera(VehicleVector));
+        VehicleSys.AdjustOnEnter();
     }
 
     public void GarageScreen()
@@ -64,7 +65,8 @@ public class GarageCanvasController : MonoBehaviour
         SetNewScreen(GarageCanvas);
         StopAllCoroutines();
         StartCoroutine(SetCamera(GarageVector));
-        CarList[CarCount].GetComponent<Car>().SavePlayer();
+        VehicleSys.AdjustOnExit();
+        VehicleSys.CarList[VehicleSys.CarCount].GetComponent<Vehicle>().SavePlayer();
     }
 
     public void MainMenu()
@@ -80,30 +82,6 @@ public class GarageCanvasController : MonoBehaviour
             MainCamera.transform.position = Vector3.Lerp(MainCamera.transform.position, target, Time.deltaTime * smooth);
             MainCamera.transform.LookAt(new Vector3(0f, 1f, 0f));
             yield return null;
-        }
-    }
-
-    public void NextCar()
-    {
-        if(CarList[CarCount + 1] != null)
-        {
-            
-            CarList[CarCount].SetActive(false);
-            CarCount++;
-            CarList[CarCount].SetActive(true);
-            UpgradeSys.CurrentVehicle = CarList[CarCount].GetComponent<Car>();
-        }
-    }
-
-    public void PreviousCar()
-    {
-        if (CarList[CarCount - 1] != null)
-        {
-
-            CarList[CarCount].SetActive(false);
-            CarCount--;
-            CarList[CarCount].SetActive(true);
-            UpgradeSys.CurrentVehicle = CarList[CarCount].GetComponent<Car>();
         }
     }
 }

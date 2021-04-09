@@ -9,7 +9,7 @@ public class ScrapController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var CarTag = other.tag;
-        var CarObject = other.gameObject.GetComponentInParent<Car>();
+        var CarObject = other.gameObject.GetComponentInParent<Vehicle>();
         if (CarTag == "CarCollider")
         {
             CarObject.Scrap += ScrapAmount;

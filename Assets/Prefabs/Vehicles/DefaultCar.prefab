@@ -111,17 +111,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 1544367902174657711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eed4271e16348064bbb1d7a3f28e9904, type: 3}
+  m_Script: {fileID: 11500000, guid: 8696cd57dc4bce6419728117914b69b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VehicleName: DefaultCar
+  VehicleNumber: 0
   Health: 100
   Fuel: 100
-  FuelUsage: 0.5
-  Scrap: 0
-  ShouldVehicleWork: 0
-  centerOfMass: {fileID: 2789914507935349715}
-  motorTorque: 2500
+  FuelUsage: 0.25
+  motorTorque: 1500
   maxSteer: 20
+  centerOfMass: {fileID: 2789914507935349715}
+  ShouldVehicleWork: 0
+  Scrap: 0
+  EngineLevel: 1
+  TiresLevel: 1
+  FuelLevel: 1
+  FrameLevel: 1
+  EngineUpgrade:
+  - 1000
+  - 1750
+  - 2500
+  - 3500
+  - 4750
+  FuelUpgrade:
+  - 50
+  - 75
+  - 100
+  - 125
+  - 150
+  FrameUpgrade:
+  - 50
+  - 80
+  - 120
+  - 160
+  - 225
 --- !u!1 &2789914507935349714
 GameObject:
   m_ObjectHideFlags: 0

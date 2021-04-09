@@ -9,10 +9,10 @@ public class ObstacleController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         
-        var CarTag = collision.collider.GetComponentInParent<Car>();
+        var CarTag = collision.collider.GetComponentInParent<Vehicle>();
         if (CarTag != null)
         {
-            var appliedDamage = collision.relativeVelocity.magnitude * damageScaler;
+            var appliedDamage = CarTag.FrameStrength * (collision.relativeVelocity.magnitude * damageScaler);
             CarTag.Health -= appliedDamage;
             //Debug.Log("Relative Velocity: " + collision.relativeVelocity.magnitude + " Damage Inflicted: " + appliedDamage);
         }
