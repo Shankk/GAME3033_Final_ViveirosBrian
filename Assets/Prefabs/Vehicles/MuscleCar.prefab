@@ -877,7 +877,7 @@ MonoBehaviour:
   VehicleNumber: 2
   ActivateVehicle: 1
   VehiclePurchased: 0
-  VehicleCost: 12500
+  VehicleCost: 500
   Scrap: 0
   KPH: 0
   Health: 100

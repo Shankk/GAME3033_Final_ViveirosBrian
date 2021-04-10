@@ -21,16 +21,15 @@ public class GameManager : MonoBehaviour
         InputController = GetComponentInChildren<InputController>();
     }
 
-    private void Start()
-    {
-        Car = GameObject.FindGameObjectWithTag("PlayerCar").GetComponent<Vehicle>();
-    }
-
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Car == null)
+        {
+            Car = GameObject.FindGameObjectWithTag("PlayerCar").GetComponent<Vehicle>();
+        }
         vehicleSpeed = Car.KPH;
-        updateNeedle();
+        updateNeedle(); 
     }
 
     public void updateNeedle()

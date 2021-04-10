@@ -3597,7 +3597,7 @@ MonoBehaviour:
   - {fileID: 8700595882630649771}
   - {fileID: 575086758}
   - {fileID: 1125960673}
-  PlayerCar: {fileID: 1125960673}
+  PlayerCar: {fileID: 0}
   pause: {fileID: 1120375752}
   gameOver: {fileID: 1133493707}
   StartOrigin: {fileID: 476179800}

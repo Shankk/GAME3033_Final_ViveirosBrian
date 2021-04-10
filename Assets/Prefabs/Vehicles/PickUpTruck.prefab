@@ -443,7 +443,7 @@ MonoBehaviour:
   VehicleNumber: 1
   ActivateVehicle: 1
   VehiclePurchased: 0
-  VehicleCost: 5000
+  VehicleCost: 500
   Scrap: 0
   KPH: 0
   Health: 100
@@ -457,12 +457,12 @@ MonoBehaviour:
   FuelLevel: 0
   FrameLevel: 0
   EngineUpgrade:
-  - 1500
-  - 1750
-  - 2100
+  - 1600
+  - 1900
   - 2300
   - 2500
   - 2800
+  - 3200
   SuspensionUpgrade:
   - 0.1
   - 0.14
@@ -484,7 +484,7 @@ MonoBehaviour:
   - 0.55
   - 0.4
   - 0.25
-  SpeedStat: 0.4
+  SpeedStat: 0.5
   HandlingStat: 0.7
   FuelStat: 0.6
   FrameStat: 0.8
@@ -657,10 +657,10 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.3
+    m_ExtremumValue: 1.3
+    m_AsymptoteSlip: 0.6
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &164898731162019798
@@ -735,10 +735,10 @@ WheelCollider:
     m_AsymptoteValue: 0.5
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
+    m_ExtremumSlip: 0.3
+    m_ExtremumValue: 1.3
+    m_AsymptoteSlip: 0.6
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!114 &7941590721650140665
@@ -858,7 +858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8144249763100700103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 351710421430662325}
