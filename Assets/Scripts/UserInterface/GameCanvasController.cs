@@ -62,7 +62,9 @@ public class GameCanvasController : MonoBehaviour
         // Lose Condition
         if(PlayerCar.GetComponent<Vehicle>().Fuel <= 0 || PlayerCar.GetComponent<Vehicle>().Health <= 0)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 1;
+            PlayerCar.GetComponent<Vehicle>().ActivateVehicle = false;
+            PlayerCar.GetComponent<Vehicle>().Throttle = 0;
             gameOver.enabled = true;
             SaveSystem.SavePlayerData(PlayerCar.GetComponent<Vehicle>(), true);
         }

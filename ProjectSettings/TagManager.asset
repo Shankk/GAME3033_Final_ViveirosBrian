@@ -7,6 +7,9 @@ TagManager:
   - GameCanvas
   - PlayerCar
   - CarCollider
+  - Animated
+  - Ragdoll
+  - Zombie
   layers:
   - Default
   - TransparentFX

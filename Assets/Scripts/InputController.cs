@@ -7,6 +7,9 @@ public class InputController : MonoBehaviour
 {
     public InputAction inputThrottleAxis;
     public InputAction inputSteerAxis;
+    public InputAction gearUp;
+    public InputAction gearDown;
+    public InputAction toggleDeath;
 
     public float ThrottleInput { get; private set; }
     public float SteerInput { get; private set; }
@@ -15,12 +18,18 @@ public class InputController : MonoBehaviour
     {
         inputSteerAxis.Enable();
         inputThrottleAxis.Enable();
+        gearUp.Enable();
+        gearDown.Enable();
+        toggleDeath.Enable();
     }
 
     private void OnDisable()
     {
         inputSteerAxis.Disable();
         inputThrottleAxis.Disable();
+        gearUp.Disable();
+        gearDown.Disable();
+        toggleDeath.Disable();
     }
 
     // Update is called once per frame

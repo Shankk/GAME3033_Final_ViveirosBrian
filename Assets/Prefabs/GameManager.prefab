@@ -160,6 +160,38 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Input Steer Axis
       m_Flags: 8
+  gearInput:
+    m_Name: Gear Input
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fba0c6e8-40ce-4125-8afc-92e55eb231f9
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: c607879c-2a5c-46c1-8a2e-3955096e68e1
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gear Input
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 0037289a-44cc-48a4-a320-f0d0de932d62
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gear Input
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 97a36d43-b9da-4b1e-aa31-011baf8004b5
+      m_Path: <Keyboard>/q
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Gear Input
+      m_Flags: 8
 --- !u!1 &6743090948561235837
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,3 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2327e65775276c54c8a4fdef4be6666b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Car: {fileID: 0}
+  needle: {fileID: 0}
+  kph: {fileID: 0}
+  gearNum: {fileID: 0}
+  vehicleSpeed: 0

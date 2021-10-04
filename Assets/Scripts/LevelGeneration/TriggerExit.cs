@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TriggerExit : MonoBehaviour
@@ -42,9 +44,6 @@ public class TriggerExit : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         Destroy(transform.root.gameObject);
-
+       
     }
-
-
-
 }

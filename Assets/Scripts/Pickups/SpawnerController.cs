@@ -9,12 +9,36 @@ public class SpawnerController : MonoBehaviour
     public GameObject Scrap;
     public bool spawnPickups = false;
     public bool spawnObstacles = false;
-    public bool spawnScrap = false; 
+    public bool spawnScrap = false;
     public float chanceToSpawn = 25f;
+
+    [Header("Floater (Does Not Work on Obstacles)")]
+    public bool FloatObject = false;
+    public float degreesPerSecond = 15.0f;
+    public float amplitude = 0.5f;
+    public float frequency = 1f;
+    // Position Storage Variables
+    Vector3 posOffset = new Vector3();
+    Vector3 tempPos = new Vector3();
 
     private void Start()
     {
         SpawnObjects();
+        posOffset = transform.position;
+    }
+
+    private void FixedUpdate()
+    {
+        if(FloatObject && !spawnObstacles)
+        {
+            transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
+
+            // Float up/down with a Sin()
+            tempPos = posOffset;
+            tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
+
+            transform.position = tempPos;
+        }
     }
 
     void SpawnObjects()
@@ -29,6 +53,10 @@ public class SpawnerController : MonoBehaviour
                 var cloneObj = Instantiate(objectFromList, transform.position, transform.rotation);
                 cloneObj.transform.SetParent(gameObject.transform);
             }
+            else
+            {
+                Destroy(transform.gameObject);
+            }
         }
 
         if(spawnPickups)
@@ -38,6 +66,10 @@ public class SpawnerController : MonoBehaviour
                 GameObject objectFromList = Pickups[Random.Range(0, Pickups.Length)];
                 var cloneObj = Instantiate(objectFromList, transform.position, transform.rotation);
                 cloneObj.transform.SetParent(gameObject.transform);
+            }
+            else
+            {
+                Destroy(transform.gameObject);
             }
         }
 

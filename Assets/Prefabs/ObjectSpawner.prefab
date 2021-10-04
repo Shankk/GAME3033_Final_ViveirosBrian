@@ -53,3 +53,7 @@ MonoBehaviour:
   spawnObstacles: 0
   spawnScrap: 0
   chanceToSpawn: 25
+  FloatObject: 1
+  degreesPerSecond: 15
+  amplitude: 0.5
+  frequency: 1

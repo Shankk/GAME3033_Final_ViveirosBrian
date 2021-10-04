@@ -75,9 +75,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a247d79738789f44eb17301c838b21c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftTire: 0
   steer: 0
   invertSteer: 0
   power: 1
+  radius: 6
 --- !u!1 &3062041228764743303
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,9 +243,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a247d79738789f44eb17301c838b21c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftTire: 0
   steer: 1
   invertSteer: 0
   power: 0
+  radius: 6
 --- !u!1 &5834374413294019002
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,9 +323,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a247d79738789f44eb17301c838b21c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftTire: 0
   steer: 0
   invertSteer: 0
   power: 1
+  radius: 6
 --- !u!1 &6142119053247957220
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,9 +403,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a247d79738789f44eb17301c838b21c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftTire: 0
   steer: 1
   invertSteer: 0
   power: 0
+  radius: 6
 --- !u!1 &7772375111719289804
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +779,7 @@ GameObject:
   - component: {fileID: 7790861527997086339}
   - component: {fileID: 8146536774191353758}
   - component: {fileID: 8025019456439829709}
+  - component: {fileID: 7259668870222021246}
   m_Layer: 8
   m_Name: MuscleCar
   m_TagString: PlayerCar
@@ -872,6 +881,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8696cd57dc4bce6419728117914b69b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drive: 0
+  gearChange: 0
   centerOfMass: {fileID: 2671663021640233401}
   VehicleName: Muscle
   VehicleNumber: 2
@@ -879,24 +890,97 @@ MonoBehaviour:
   VehiclePurchased: 0
   VehicleCost: 500
   Scrap: 0
+  enginePower:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 100
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 136
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 2002.7836
+      value: 510.69757
+      inSlope: 0.4509857
+      outSlope: 0.4509857
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.09190906
+      outWeight: 0.21364672
+    - serializedVersion: 3
+      time: 3996.4763
+      value: 1023.6582
+      inSlope: -0.010668917
+      outSlope: -0.010668917
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 5992.0713
+      value: -3.1457214
+      inSlope: -1.2431331
+      outSlope: -1.2431331
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.03999277
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  totalPower: 0
   KPH: 0
+  engineRPM: 0
+  wheelsRPM: 0
+  maxRPM: 5600
+  minRPM: 3000
+  smoothTime: 0.01
+  gears: []
+  gearNum: 0
   Health: 100
   Fuel: 100
   FuelUsage: 2.5
   FrameStrength: 1
-  motorTorque: 2000
   maxSteer: 20
   EngineLevel: 5
   TiresLevel: 5
   FuelLevel: 0
   FrameLevel: 0
   EngineUpgrade:
-  - 2000
-  - 2300
-  - 2600
-  - 2900
-  - 3200
-  - 3500
+  - serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  - serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  - serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  - serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  - serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  - serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   SuspensionUpgrade:
   - 0.1
   - 0.125
@@ -922,3 +1006,28 @@ MonoBehaviour:
   HandlingStat: 0.6
   FuelStat: 0.5
   FrameStat: 0.3
+--- !u!114 &7259668870222021246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7804600924297474071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367d6a3b93d4fe34dabecb98c75cceaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineSoundStyle: 0
+  lowAccelClip: {fileID: 8300000, guid: fd93ac461f80d12408831c5a987b0e72, type: 3}
+  lowDecelClip: {fileID: 8300000, guid: fd93ac461f80d12408831c5a987b0e72, type: 3}
+  highAccelClip: {fileID: 8300000, guid: 28b5f38b5a4b32a41a192ea5d6ce59bb, type: 3}
+  highDecelClip: {fileID: 8300000, guid: 84ab8514c8739b3409f3d60ca285171a, type: 3}
+  pitchMultiplier: 1.5
+  lowPitchMin: 0.4
+  lowPitchMax: 5
+  highPitchMultiplier: 0.4
+  maxRolloffDistance: 500
+  dopplerLevel: 1
+  useDoppler: 1
+  CarController: {fileID: 0}
