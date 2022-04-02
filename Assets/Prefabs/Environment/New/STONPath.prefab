@@ -28,7 +28,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1162048067302537871}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,31 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodes:
-  - position: {x: 0, y: 2, z: -150}
-    direction: {x: 0, y: 2.2368786, z: -141.61427}
-    up: {x: 0, y: 1, z: 0}
-    scale: {x: 1, y: 1}
-    roll: 0
-  - position: {x: -0.3689041, y: 5.018881, z: -113.60991}
-    direction: {x: 0.91892004, y: 5.4025807, z: -101.03321}
-    up: {x: 0, y: 1, z: 0}
-    scale: {x: 1, y: 1}
-    roll: 0
-  - position: {x: 2.7288423, y: 4.6785536, z: -70.405365}
-    direction: {x: 2.7288423, y: 3.6003184, z: -62.2324}
-    up: {x: 0, y: 1, z: 0}
-    scale: {x: 1, y: 1}
-    roll: 0
-  - position: {x: 2.8031535, y: -0.86476374, z: -21.734327}
-    direction: {x: 2.6497836, y: -0.7207408, z: -3.6165981}
-    up: {x: 0, y: 1, z: 0}
-    scale: {x: 1, y: 1}
-    roll: 0
-  - position: {x: 0, y: 2.6670227, z: 27.7555}
-    direction: {x: 2.2348204, y: 4.4199777, z: 54.628784}
-    up: {x: 0, y: 1, z: 0}
-    scale: {x: 1, y: 1}
-    roll: 0
   - position: {x: 0, y: 2.9119792, z: 96.98718}
     direction: {x: 0.4019413, y: 3.6755137, z: 117.28564}
     up: {x: 0, y: 1, z: 0}
@@ -81,81 +57,6 @@ MonoBehaviour:
     scale: {x: 1, y: 1}
     roll: 0
   curves:
-  - n1:
-      position: {x: 0, y: 2, z: -150}
-      direction: {x: 0, y: 2.2368786, z: -141.61427}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    n2:
-      position: {x: -0.3689041, y: 5.018881, z: -113.60991}
-      direction: {x: 0.91892004, y: 5.4025807, z: -101.03321}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    Changed:
-      m_PersistentCalls:
-        m_Calls: []
-  - n1:
-      position: {x: -0.3689041, y: 5.018881, z: -113.60991}
-      direction: {x: 0.91892004, y: 5.4025807, z: -101.03321}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    n2:
-      position: {x: 2.7288423, y: 4.6785536, z: -70.405365}
-      direction: {x: 2.7288423, y: 3.6003184, z: -62.2324}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    Changed:
-      m_PersistentCalls:
-        m_Calls: []
-  - n1:
-      position: {x: 2.7288423, y: 4.6785536, z: -70.405365}
-      direction: {x: 2.7288423, y: 3.6003184, z: -62.2324}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    n2:
-      position: {x: 2.8031535, y: -0.86476374, z: -21.734327}
-      direction: {x: 2.6497836, y: -0.7207408, z: -3.6165981}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    Changed:
-      m_PersistentCalls:
-        m_Calls: []
-  - n1:
-      position: {x: 2.8031535, y: -0.86476374, z: -21.734327}
-      direction: {x: 2.6497836, y: -0.7207408, z: -3.6165981}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    n2:
-      position: {x: 0, y: 2.6670227, z: 27.7555}
-      direction: {x: 2.2348204, y: 4.4199777, z: 54.628784}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    Changed:
-      m_PersistentCalls:
-        m_Calls: []
-  - n1:
-      position: {x: 0, y: 2.6670227, z: 27.7555}
-      direction: {x: 2.2348204, y: 4.4199777, z: 54.628784}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: 0
-    n2:
-      position: {x: 0, y: 2.9119792, z: 96.98718}
-      direction: {x: 0.4019413, y: 3.6755137, z: 117.28564}
-      up: {x: 0, y: 1, z: 0}
-      scale: {x: 1, y: 1}
-      roll: -2
-    Changed:
-      m_PersistentCalls:
-        m_Calls: []
   - n1:
       position: {x: 0, y: 2.9119792, z: 96.98718}
       direction: {x: 0.4019413, y: 3.6755137, z: 117.28564}
@@ -171,7 +72,7 @@ MonoBehaviour:
     Changed:
       m_PersistentCalls:
         m_Calls: []
-  Length: 301.1253
+  Length: 53.03444
   isLoop: 0
   CurveChanged:
     m_PersistentCalls:
@@ -195,41 +96,152 @@ MonoBehaviour:
       physicMaterial: {fileID: 0}
       translation: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 90, z: 0}
-      scale: {x: 1, y: 2, z: 1}
+      scale: {x: 0.5, y: 1, z: 0.5}
   - transformedMeshes:
     - mesh: {fileID: 8312093586041497703, guid: 48edebe3f9e7a6d4e9df67060ff07fc7, type: 3}
       material: {fileID: 2100000, guid: 16ed2848152555a42a5401ee551a3594, type: 2}
       physicMaterial: {fileID: 0}
       translation: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 90, z: 0}
-      scale: {x: 1, y: 2, z: 1}
-  - transformedMeshes:
-    - mesh: {fileID: 8312093586041497703, guid: 48edebe3f9e7a6d4e9df67060ff07fc7, type: 3}
-      material: {fileID: 2100000, guid: 16ed2848152555a42a5401ee551a3594, type: 2}
-      physicMaterial: {fileID: 0}
-      translation: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 90, z: 0}
-      scale: {x: 1, y: 2, z: 1}
-  - transformedMeshes:
-    - mesh: {fileID: 8312093586041497703, guid: 48edebe3f9e7a6d4e9df67060ff07fc7, type: 3}
-      material: {fileID: 2100000, guid: 16ed2848152555a42a5401ee551a3594, type: 2}
-      physicMaterial: {fileID: 0}
-      translation: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 90, z: 0}
-      scale: {x: 1, y: 2, z: 1}
-  - transformedMeshes:
-    - mesh: {fileID: 8312093586041497703, guid: 48edebe3f9e7a6d4e9df67060ff07fc7, type: 3}
-      material: {fileID: 2100000, guid: 16ed2848152555a42a5401ee551a3594, type: 2}
-      physicMaterial: {fileID: 0}
-      translation: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 90, z: 0}
-      scale: {x: 1, y: 2, z: 1}
-  - transformedMeshes:
-    - mesh: {fileID: 8312093586041497703, guid: 48edebe3f9e7a6d4e9df67060ff07fc7, type: 3}
-      material: {fileID: 2100000, guid: 16ed2848152555a42a5401ee551a3594, type: 2}
-      physicMaterial: {fileID: 0}
-      translation: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 90, z: 0}
-      scale: {x: 1, y: 2, z: 1}
-  - transformedMeshes: []
+      scale: {x: 0.5, y: 1, z: 0.5}
   updateInPlayMode: 1
+--- !u!1 &3435421059993696461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 938643784523273185}
+  - component: {fileID: 4918904774990359041}
+  - component: {fileID: 7901550146423491568}
+  - component: {fileID: 3148083627718336500}
+  - component: {fileID: 262893371517614639}
+  m_Layer: 0
+  m_Name: segment 0 mesh 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &938643784523273185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435421059993696461}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1162048067302537871}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4918904774990359041
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435421059993696461}
+  m_Mesh: {fileID: 0}
+--- !u!23 &7901550146423491568
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435421059993696461}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 16ed2848152555a42a5401ee551a3594, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3148083627718336500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435421059993696461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cda9ed2ad6a8b4781166236afc26b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &262893371517614639
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3435421059993696461}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!1 &7941772004486015321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162048067302537871}
+  m_Layer: 0
+  m_Name: generated by ExampleTrack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1162048067302537871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941772004486015321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 938643784523273185}
+  m_Father: {fileID: 8006600483828576914}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

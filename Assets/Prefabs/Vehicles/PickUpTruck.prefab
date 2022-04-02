@@ -344,7 +344,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &351710421430662325
 Transform:
   m_ObjectHideFlags: 0
@@ -492,6 +492,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   totalPower: 0
   KPH: 0
+  MPH: 0
   engineRPM: 0
   wheelsRPM: 0
   maxRPM: 5600

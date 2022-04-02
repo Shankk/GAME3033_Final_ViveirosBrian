@@ -108,4 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570d8e6b6536d2c4887301acafd02aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activateFloater: 1
+  degreesPerSecond: 15
+  amplitude: 0.05
+  frequency: 1
   FuelAmount: 50

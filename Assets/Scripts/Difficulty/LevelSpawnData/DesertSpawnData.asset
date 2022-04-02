@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68df38843c8bf1489e5d910b985706a, type: 3}
+  m_Name: DesertSpawnData
+  m_EditorClassIdentifier: 
+  SpawnablePickups:
+  - {fileID: 11400000, guid: 3f22d4153db6c994593865eaf786f73c, type: 2}
+  - {fileID: 11400000, guid: 67691506cfb504543b2359ae127e8cb3, type: 2}
+  - {fileID: 11400000, guid: 775df01d9b69d78459afcfa3263227fa, type: 2}
+  SpawnableObstacles:
+  - {fileID: 11400000, guid: 2d65482b5dacbc24886626050738dd90, type: 2}
+  SpawnableEnemies:
+  - {fileID: 11400000, guid: c1a36e86b6a2e7247b0bcf4c3c19642c, type: 2}

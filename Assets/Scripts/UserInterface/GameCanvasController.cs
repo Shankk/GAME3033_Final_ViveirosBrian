@@ -8,6 +8,8 @@ public class GameCanvasController : MonoBehaviour
 {
     public GameObject[] CarList = new GameObject[3]; 
     public GameObject PlayerCar;
+    public Vehicle CarEngine;
+    public GameObject needle;
     public Canvas pause;
     public Canvas gameOver;
     public Transform StartOrigin;
@@ -17,14 +19,23 @@ public class GameCanvasController : MonoBehaviour
     public TMPro.TextMeshProUGUI ScrapUi;
     public Slider HealthSlider;
     public Slider FuelSlider;
+    public TMPro.TextMeshProUGUI speedometer;
+    public TMPro.TextMeshProUGUI gearNum;
 
+    public bool SetToMPH;
+    public float vehicleSpeed;
+    public float distance;
     float TimerThreshold;
     float Timer = 0f;
+    private float startPosition = 218f, endPosition = -40f;
+    private float desiredPosition;
+
 
     private void Start()
     {
         ChooseVehicle();
         PlayerCar = GameObject.FindGameObjectWithTag("PlayerCar");
+        CarEngine = PlayerCar.GetComponent<Vehicle>();
     }
 
     private void FixedUpdate()
@@ -32,12 +43,13 @@ public class GameCanvasController : MonoBehaviour
         UpdateTime();
         UpdateDistance();
         UpdatePlayerStats();
+        UpdateNeedle();
     }
 
     void UpdateTime()
     {
         TimerThreshold += Time.deltaTime;
-        PlayerCar.GetComponent<Vehicle>().Fuel -= PlayerCar.GetComponent<Vehicle>().FuelUsage * Time.deltaTime;
+        CarEngine.Fuel -= CarEngine.FuelUsage * Time.deltaTime;
         if(TimerThreshold > 1)
         {
             Timer += 1f;
@@ -48,25 +60,39 @@ public class GameCanvasController : MonoBehaviour
 
     void UpdateDistance()
     {
-        var Distance = Vector3.Distance(StartOrigin.position, PlayerCar.transform.position);
-        var FinalDistance = Mathf.Round(Distance);
-        DistanceUi.text = "Distance: " + FinalDistance;
+        distance = Mathf.Round(Vector3.Distance(StartOrigin.position, PlayerCar.transform.position));
+        DistanceUi.text = "Distance: " + distance;
+    }
+
+    public void UpdateNeedle()
+    {
+        desiredPosition = startPosition - endPosition;
+        float temp = vehicleSpeed / 180;
+        needle.transform.eulerAngles = new Vector3(0, 0, (startPosition - temp * desiredPosition));
+        vehicleSpeed = SetToMPH ? CarEngine.MPH : CarEngine.KPH;
+        speedometer.text = SetToMPH ? vehicleSpeed.ToString("MPH \n\n\n 0") :
+            vehicleSpeed.ToString("KPH \n\n\n 0");
+    }
+
+    public void changeGear()
+    {
+        gearNum.text = (CarEngine.gearNum + 1).ToString();
     }
 
     void UpdatePlayerStats()
     {
-        HealthSlider.value = PlayerCar.GetComponent<Vehicle>().Health / 100;
-        FuelSlider.value = PlayerCar.GetComponent<Vehicle>().Fuel / 100;
-        ScrapUi.text = "Scrap: " + PlayerCar.GetComponent<Vehicle>().Scrap;
+        HealthSlider.value = CarEngine.Health / 100;
+        FuelSlider.value = CarEngine.Fuel / 100;
+        ScrapUi.text = "Scrap: " + CarEngine.Scrap;
 
         // Lose Condition
-        if(PlayerCar.GetComponent<Vehicle>().Fuel <= 0 || PlayerCar.GetComponent<Vehicle>().Health <= 0)
+        if(CarEngine.Fuel <= 0 || CarEngine.Health <= 0)
         {
             Time.timeScale = 1;
-            PlayerCar.GetComponent<Vehicle>().ActivateVehicle = false;
-            PlayerCar.GetComponent<Vehicle>().Throttle = 0;
+            CarEngine.ActivateVehicle = false;
+            CarEngine.Throttle = 0;
             gameOver.enabled = true;
-            SaveSystem.SavePlayerData(PlayerCar.GetComponent<Vehicle>(), true);
+            SaveSystem.SavePlayerData(CarEngine, true);
         }
         
     }
@@ -92,13 +118,13 @@ public class GameCanvasController : MonoBehaviour
 
     public void RestartGame()
     {
-        SaveSystem.SavePlayerData(PlayerCar.GetComponent<Vehicle>(), true);
+        SaveSystem.SavePlayerData(CarEngine, true);
         SceneManager.LoadScene("Game");
     }
 
     public void Garage()
     {
-        SaveSystem.SavePlayerData(PlayerCar.GetComponent<Vehicle>(), true);
+        SaveSystem.SavePlayerData(CarEngine, true);
         Time.timeScale = 1;
         SceneManager.LoadScene("Garage");
     }

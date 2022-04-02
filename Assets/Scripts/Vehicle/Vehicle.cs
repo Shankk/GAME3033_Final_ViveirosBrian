@@ -35,6 +35,7 @@ public class Vehicle : MonoBehaviour
     public AnimationCurve enginePower;
     public float totalPower;
     public float KPH;
+    public float MPH;
     public float engineRPM;
     public float wheelsRPM;
     public float maxRPM, minRPM;
@@ -188,19 +189,20 @@ public class Vehicle : MonoBehaviour
             if (engineRPM > maxRPM && gearNum < gears.Length - 1)
             {
                 gearNum++;
-                GameManager.Instance.changeGear();
+                GameManager.Instance.CanvasController.changeGear();
             }
         }
 
         if(engineRPM < minRPM && gearNum > 0)
         {
             gearNum--;
-            GameManager.Instance.changeGear();
+            GameManager.Instance.CanvasController.changeGear();
         }
     }
     void UpdateVehicleStats()
     {
-        KPH = _rigidbody.velocity.magnitude;
+        KPH = _rigidbody.velocity.magnitude * 3.6f;
+        MPH = KPH / 1.609f;
     }
 
     void AssignUpgrades()

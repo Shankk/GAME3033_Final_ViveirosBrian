@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrapController : MonoBehaviour
+public class ScrapController : PickupBehaviour
 {
     public int ScrapAmount = 50;
+
+    private void FixedUpdate()
+    {
+        FloatObject();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

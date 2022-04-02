@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3b8ad20e1ce55498862b9665fd35bf, type: 3}
+  m_Name: Wrench
+  m_EditorClassIdentifier: 
+  ObjectName: Wrench
+  Object: {fileID: 2911342520549590422, guid: 5aa5224e916482c4ebb499c2b2039c0c, type: 3}
+  StartSpawnChance: 20
+  MinSpawnChance: 0
+  MaxSpawnChance: 100
+  ItemMultiplier: 1
+  CurrentSpawn: 33.45

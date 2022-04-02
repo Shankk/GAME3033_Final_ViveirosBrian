@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a3b8ad20e1ce55498862b9665fd35bf, type: 3}
+  m_Name: Zombie
+  m_EditorClassIdentifier: 
+  ObjectName: Zombie
+  Object: {fileID: 8420069141704890177, guid: 500e0c00f1816f24b9aa1b54585723ff, type: 3}
+  StartSpawnChance: 20
+  MinSpawnChance: 10
+  MaxSpawnChance: 80
+  ItemMultiplier: 1
+  CurrentSpawn: 33.45

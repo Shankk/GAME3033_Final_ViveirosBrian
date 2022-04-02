@@ -57,5 +57,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eb5dc136925484a9564b4e0c88937e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 20
-  cameraOffset: {x: 0, y: 0}
+  delay: 15

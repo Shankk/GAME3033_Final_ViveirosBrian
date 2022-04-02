@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JerryCanController : MonoBehaviour
+public class JerryCanController : PickupBehaviour
 {
     public float FuelAmount = 50f;
+
+    private void FixedUpdate()
+    {
+        FloatObject();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

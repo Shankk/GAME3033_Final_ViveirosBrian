@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WrenchController : MonoBehaviour
+public class WrenchController : PickupBehaviour
 {
     public float RepairAmount = 50f;
+
+    private void FixedUpdate()
+    {
+        FloatObject();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

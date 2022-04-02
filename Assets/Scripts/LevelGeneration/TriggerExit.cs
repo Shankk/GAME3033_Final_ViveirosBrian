@@ -6,9 +6,7 @@ using UnityEngine;
 
 public class TriggerExit : MonoBehaviour
 {
-    CameraFollow MainCamera;
     public float delay = 5f;
-    public Vector2 cameraOffset;
 
     public delegate void ExitAction();
     public static event ExitAction OnChunkExited;
@@ -17,7 +15,7 @@ public class TriggerExit : MonoBehaviour
 
     private void Awake()
     {
-        MainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>();
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -29,14 +27,13 @@ public class TriggerExit : MonoBehaviour
             if (!exited)
             {
                 exited = true;
-                MainCamera.offset.x += cameraOffset.x;
-                MainCamera.offset.z += cameraOffset.y;
                 OnChunkExited();
                 StartCoroutine(WaitAndDeactivate());
             }
 
-
+            GameManager.Instance.DifficultyManager.CalculateGameDifficulty();
         }
+
     }
 
     IEnumerator WaitAndDeactivate()
