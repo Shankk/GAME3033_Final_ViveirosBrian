@@ -56,9 +56,40 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Calculate Distance Between User and Target
         float Distance = Vector3.Distance(target.position, transform.position);
+        // Enables AI Thinking
+        ActivateAgentBehaviour(Distance);
 
-        if(agent.enabled && ragdoll.GetDead() == false)
+    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    var CarTag = other.tag;
+    //    If We Collided with the players vehicle
+    //    if (CarTag == "CarCollider")
+    //    {
+    //        ragdoll.Dead();
+    //        cCollider.enabled = false;
+    //    }
+    //}
+
+    // On User Collision to determine if fatal or not
+    private void OnCollisionEnter(Collision collision)
+    {
+        var CarTag = collision.collider.tag;
+        //Debug.Log("CarTag: " + CarTag);
+        if (CarTag == "CarCollider")
+        {
+            ragdoll.Dead();
+            cCollider.enabled = false;
+            rigid.isKinematic = true;
+        }
+    }
+
+    void ActivateAgentBehaviour(float Distance)
+    {
+        if (agent.enabled && ragdoll.GetDead() == false)
         {
             // If Target Is Within Agro Radius
             if (Distance <= LookRadius)
@@ -70,7 +101,7 @@ public class EnemyController : MonoBehaviour
                     StartCoroutine(InitiateAttack());
                 }
                 // Continue to chase
-                else if(AreWeAttacking == false)
+                else if (AreWeAttacking == false)
                 {
                     agent.speed = Speed = Mathf.Lerp(Speed, RunningSpeed, smoothing * Time.deltaTime);
                     agent.SetDestination(target.position);
@@ -81,14 +112,14 @@ public class EnemyController : MonoBehaviour
                 }
             }
             // Else If Target Is Greater Than Agro Radius
-            else if(Distance >= LookRadius)
+            else if (Distance >= LookRadius)
             {
                 agent.speed = Speed = Mathf.Lerp(Speed, WalkingSpeed, smoothing * Time.deltaTime);
                 if (IsChasing)
                 {
                     StartCoroutine(ReturnToRoam());
                 }
-            
+
                 if (IsIdle)
                 {
                     StartCoroutine(CreateNewRoam());
@@ -104,27 +135,6 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        var CarTag = other.tag;
-        //If We Collided with the players vehicle
-        if (CarTag == "CarCollider")
-        {
-            ragdoll.Dead();
-            cCollider.enabled = false;
-        }
-    }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    var CarTag = collision.collider.tag;
-    //    Debug.Log("CarTag: " + CarTag);
-    //    if (CarTag == "CarCollider")
-    //    {
-    //        ragdoll.ToggleDead();
-    //    }
-    //}
 
     IEnumerator CreateNewRoam()
     {
@@ -170,11 +180,12 @@ public class EnemyController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 3f);
     }
 
-    private void OnDrawGizmosSelected()
-    {
+    // Draw Agro and Roam Radius
+    //private void OnDrawGizmosSelected()
+    //{
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, LookRadius);
-        Gizmos.DrawWireCube(RoamPos, new Vector3(1, 1, 1));
-    }
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, LookRadius);
+    //    Gizmos.DrawWireCube(RoamPos, new Vector3(1, 1, 1));
+    //}
 }

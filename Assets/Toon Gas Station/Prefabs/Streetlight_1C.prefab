@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 33574897534743324}
   - component: {fileID: 23942354931042162}
   - component: {fileID: 65181420547456586}
+  - component: {fileID: 1189271641}
+  - component: {fileID: 1189271640}
   m_Layer: 0
   m_Name: Streetlight_1C
   m_TagString: Untagged
@@ -28,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1059719019635558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4361767547145792}
   m_Father: {fileID: 0}
@@ -96,6 +98,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 6.756783, z: 0.5}
   m_Center: {x: 0, y: 3.3209364, z: 0}
+--- !u!54 &1189271641
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059719019635558}
+  serializedVersion: 2
+  m_Mass: 150
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!138 &1189271640
+FixedJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059719019635558}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_BreakForce: 400000
+  m_BreakTorque: 400000
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
 --- !u!1 &1476448308455810
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4819737680709140889}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.641, y: 0.3502, z: 0}
+  m_LocalPosition: {x: 0.46, y: 0.347, z: -0}
   m_LocalScale: {x: 0.18931529, y: 1.111111, z: 0.46280503}
   m_Children: []
   m_Father: {fileID: 4361767547145792}
